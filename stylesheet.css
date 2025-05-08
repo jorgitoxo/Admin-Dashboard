@@ -1,25 +1,52 @@
+/* || RESETS || */
+
 * {
     margin: 0;
     padding: 0;
+}
 
+li {
+    list-style-type: none;
+}
+
+input[type="search"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button {
+    appearance: none;
+}
+
+/* -------------------------------------------- */
+
+* {
     box-sizing: border-box;
     font: 1em / 1.6 system-ui, sans-serif;
-}
-
-/* Debugging */
-* {
-    background: hsla(0, 0%, 0%, 0.1) !important;
-}
-
-* {
-    outline: 1px solid hotpink;
-}
-
-*:nth-child(2n) {
-    outline: 1px solid cyan;
 }
 
 body {
     padding: 60px;
     margin: 60px;
+    outline: 1px solid gray;
 }
+
+
+/* -------------------------------------------- */
+
+/* || DEBUGGING || */
+
+/* * {
+    background: hsla(0, 0%, 0%, 0.1) !important;
+} */
+
+/* * {
+    outline: 1px solid hotpink;
+} */
+
+/* * :nth-child(2n) {
+    outline: 1px solid cyan;
+} */
+
+/* -------------------------------------------- */
