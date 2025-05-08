@@ -3,17 +3,21 @@
     padding: 0;
 
     box-sizing: border-box;
-    background: rgba(81, 150, 72, 0.14) !important;
     font: 1em / 1.6 system-ui, sans-serif;
 }
 
-/* * {
+/* Debugging */
+* {
+    background: hsla(0, 0%, 0%, 0.1) !important;
+}
+
+* {
     outline: 1px solid hotpink;
 }
 
 *:nth-child(2n) {
     outline: 1px solid cyan;
-} */
+}
 
 body {
     padding: 60px;
