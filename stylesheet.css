@@ -29,20 +29,15 @@ button {
 .container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    /* grid-template-rows: 1fr repeat(2, 2fr); */
-    /* grid-auto-rows: 1fr; */
-    /* height: 100dvb; */
 }
 
 .sidebar {
-    display: grid;
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    
+
+    display: grid;
     background-color: hsl(201, 79%, 46%);
     color: aliceblue;
-
-    padding-top: 20px;
 }
 
 .sidebar > ul {
@@ -59,31 +54,36 @@ button {
 }
 
 .header {
-    display: grid;
     grid-column: 2 / 4;
+
+    display: grid;
 }
 
-.header > .top-menu {
+.header > .top-menu,
+.header > .bottom-menu {
     display: flex;
 }
 
 .main-content {
     grid-column: 2 / 4;
+
+    display: grid;
+    grid-template-areas:
+        "projects announcements"
+        "projects trending";
+
 }
 
 .projects {
-    grid-column: 2 / 3;
-    /* grid-row: 2 / 4; */
+    grid-area: projects;
 }
 
 .announcements {
-    grid-column: 3 / 4;
-    /* grid-row: 1 / 2; */
+    grid-area: announcements;
 }
 
 .trending {
-    grid-column: 3 / 4;
-    /* grid-row: 3 / 4; */
+    grid-area: trending;
 }
 /* -------------------------------------------- */
 
