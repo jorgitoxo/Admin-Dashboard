@@ -23,12 +23,12 @@ button {
 
 * {
     box-sizing: border-box;
-    font: 1em / 1.6 system-ui, sans-serif;
+    font: 1em system-ui, sans-serif;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 4fr ;
 }
 
 .sidebar {
@@ -57,10 +57,16 @@ button {
     grid-column: 2 / 4;
 
     display: grid;
+
+    background-color: hsl(0, 0%, 100%);
 }
 
-.header > .top-menu,
-.header > .bottom-menu {
+.header > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header > ul > li:nth-child(2) {
     display: flex;
 }
 
@@ -71,11 +77,23 @@ button {
     grid-template-areas:
         "projects announcements"
         "projects trending";
+    gap: 20px;
+
+    background-color: hsl(214, 32%, 91%);
 
 }
 
 .projects {
     grid-area: projects;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-rows: max-content;
+}
+
+.projects > :first-child {
+    grid-column: 1 / -1;
+    /* height: 1px; */
 }
 
 .announcements {
