@@ -24,11 +24,14 @@ button {
 * {
     box-sizing: border-box;
     font: 1em system-ui, sans-serif;
+    
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 4fr ;
+    grid-template-columns: minmax(256px, 1fr) 4fr;
+
+    height: 100dvh;
 }
 
 .sidebar {
@@ -41,16 +44,42 @@ button {
 }
 
 .sidebar > ul {
-    padding-left: 48px;
+    /* padding-left: 60px; */
 }
 
+.sidebar > ul > li {
+    font: 600 1.2em / 2.4em system-ui, sans-serif;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+
+    > path {
+        fill: #FFF;
+    }
+}
+
+/* .sidebar > ul > li::before {
+    position: absolute;
+    content: "";
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+} */
+
 .sidebar > ul > li:first-of-type {
-    font-size: 2rem;
-    margin-bottom: 24px;
+    font-size: 1.8em;
+    margin-bottom: 32px;
 }
 
 .sidebar > ul > li:nth-child(7) {
-    margin-bottom: 32px;
+    margin-bottom: 48px;
 }
 
 .header {
@@ -87,13 +116,13 @@ button {
     grid-area: projects;
     
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
     grid-template-rows: max-content;
+    column-gap: 20px;
 }
 
 .projects > :first-child {
     grid-column: 1 / -1;
-    /* height: 1px; */
 }
 
 .announcements {
