@@ -13,6 +13,11 @@ input[type="search"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    border: 0px;
+}
+
+input[type="search"]:focus-visible {
+    outline: none;
 }
 
 button {
@@ -26,13 +31,25 @@ button {
     font: 1em system-ui, sans-serif;
 }
 
+svg {
+    width: 30px;
+    height: 30px;
+}
+
 .container {
     display: grid;
     grid-template-columns: minmax(256px, 1fr) 4fr;
+    /* grid-template-rows: 1fr 5fr; */
+    grid-auto-rows: min-content;
 
-    height: 100dvh;
+    min-height: 100dvh;
+    
+    > :not(.main-content) {
+        padding-top: 32px;
+    }
 }
 
+/* Sidebar */
 .sidebar {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
@@ -40,6 +57,12 @@ button {
     display: grid;
     background-color: hsl(201, 79%, 46%);
     padding-left: 12%;
+
+    > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 }
 
 .sidebar > ul > li {
@@ -47,17 +70,12 @@ button {
     align-items: center;
     gap: 20px;
 
-    font: 600 1.2em / 2.6em system-ui, sans-serif;
+    font: 600 1.2em system-ui, sans-serif;
     color: #fff;
 }
 
-svg {
-    width: 30px;
-    height: 30px;
-
-    > path {
-        fill: #fff;
-    }
+.sidebar svg > path {
+    fill: #fff;
 }
 
 .sidebar > ul > li:first-of-type {
@@ -73,25 +91,55 @@ svg {
     margin-bottom: 48px;
 }
 
+/* Header */
 .header {
     grid-column: 2 / 4;
 
     display: grid;
-
     background-color: hsl(0, 0%, 100%);
+    /* grid-auto-rows: min-content; */
 }
 
 .header > ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
 }
 
 .header > ul > li:nth-child(2) {
     display: flex;
 }
 
+.header > .top-menu > li:nth-child(1) {
+    flex: 1 1 70%;
+    padding-left: 5%;
+}
 
+.header > .top-menu > li:nth-child(2) {
+    gap: 20px;
+    align-items: center;
 
+    > .profile-photo {
+        background: url(./images/profiles/fox.svg) center / contain no-repeat;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+input[type="search"] {
+    width: 80%;
+    padding: 6px 12px;
+    background-color: hsl(214, 32%, 91%);
+    border-radius: 20px;
+}
+
+input[type="search"]:focus,
+input[type="search"]:hover {
+    background-color: hsl(214, 32%, 86%);
+}
+
+/* Main content */
 .main-content {
     grid-column: 2 / 4;
 
@@ -102,7 +150,6 @@ svg {
     gap: 20px;
 
     background-color: hsl(214, 32%, 91%);
-
 }
 
 .projects {
