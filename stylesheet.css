@@ -24,7 +24,6 @@ button {
 * {
     box-sizing: border-box;
     font: 1em system-ui, sans-serif;
-    
 }
 
 .container {
@@ -40,42 +39,34 @@ button {
 
     display: grid;
     background-color: hsl(201, 79%, 46%);
-    color: aliceblue;
-}
-
-.sidebar > ul {
-    /* padding-left: 60px; */
+    padding-left: 12%;
 }
 
 .sidebar > ul > li {
-    font: 600 1.2em / 2.4em system-ui, sans-serif;
-    position: relative;
-
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    gap: 20px;
+
+    font: 600 1.2em / 2.6em system-ui, sans-serif;
+    color: #fff;
 }
 
 svg {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
 
     > path {
-        fill: #FFF;
+        fill: #fff;
     }
 }
-
-/* .sidebar > ul > li::before {
-    position: absolute;
-    content: "";
-    background-repeat: no-repeat;
-    width: 24px;
-    height: 24px;
-} */
 
 .sidebar > ul > li:first-of-type {
     font-size: 1.8em;
     margin-bottom: 32px;
+
+    > svg {
+        scale: 2;
+    }
 }
 
 .sidebar > ul > li:nth-child(7) {
@@ -98,6 +89,8 @@ svg {
 .header > ul > li:nth-child(2) {
     display: flex;
 }
+
+
 
 .main-content {
     grid-column: 2 / 4;
