@@ -36,12 +36,22 @@ svg {
     height: 30px;
 }
 
+input[type="search"] {
+    width: 100%;
+    padding: 6px 12px;
+    background-color: hsl(214, 32%, 91%);
+    border-radius: 20px;
+}
+
+input[type="search"]:focus,
+input[type="search"]:hover {
+    background-color: hsl(214, 32%, 86%);
+}
+
 .container {
     display: grid;
     grid-template-columns: minmax(256px, 1fr) 4fr;
-    /* grid-template-rows: 1fr 5fr; */
-    grid-auto-rows: min-content;
-
+    grid-template-rows: min-content;
     min-height: 100dvh;
     
     > :not(.main-content) {
@@ -105,20 +115,25 @@ svg {
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-}
 
-.header > ul > li:nth-child(2) {
-    display: flex;
+    > li:nth-child(2) {
+        display: flex;
+    }
 }
 
 .header > .top-menu > li:nth-child(1) {
-    flex: 1 1 70%;
-    padding-left: 5%;
+    flex: 4 1 auto;
+    
+    display: flex;
+    gap: 12px;
 }
 
 .header > .top-menu > li:nth-child(2) {
-    gap: 20px;
+    flex: 1 1 auto;
+    
+    justify-content: center;
     align-items: center;
+    gap: 30px;
 
     > .profile-photo {
         background: url(./images/profiles/fox.svg) center / contain no-repeat;
@@ -127,17 +142,6 @@ svg {
     }
 }
 
-input[type="search"] {
-    width: 80%;
-    padding: 6px 12px;
-    background-color: hsl(214, 32%, 91%);
-    border-radius: 20px;
-}
-
-input[type="search"]:focus,
-input[type="search"]:hover {
-    background-color: hsl(214, 32%, 86%);
-}
 
 /* Main content */
 .main-content {
