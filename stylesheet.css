@@ -30,8 +30,18 @@ button {
 * {
     box-sizing: border-box;
     font: 1em system-ui, sans-serif;
+    
+    --active-button-shadow: #949494;
 
     --dashboard-blue: hsl(201, 79%, 46%);
+    --dashboard-white: hsl(0, 0%, 100%);
+    --dashboard-gray: hsl(214, 32%, 91%);
+    --dashboard-yellow: hsl(42, 87%, 55%);
+
+    --project-description: hsl(0, 0%, 58%);
+
+    --searchbar-idle: hsl(214, 32%, 91%);
+    --searchbar-active: hsl(214, 32%, 86%);
 }
 
 svg {
@@ -42,13 +52,13 @@ svg {
 input[type="search"] {
     width: 90%;
     padding: 6px 12px;
-    background-color: hsl(214, 32%, 91%);
+    background-color: var(--searchbar-idle);
     border-radius: 20px;
 }
 
 input[type="search"]:focus,
 input[type="search"]:hover {
-    background-color: hsl(214, 32%, 86%);
+    background-color: var(--searchbar-active);
 }
 
 button {
@@ -56,17 +66,17 @@ button {
     padding: 10px 30px;
     border-radius: 60px;
     background-color: var(--dashboard-blue);
-    color: #fff;
+    color: var(--dashboard-white);
     font: inherit;
 }
 
 button:active {
-    box-shadow: 1px 1px 1px #797979 ;
+    box-shadow: inset 1px 1px 1px var(--active-button-shadow);
 }
 
 button:hover {
     background-color: transparent;
-    color: #333;
+    filter: invert(1);
 }
 
 .container {
@@ -102,11 +112,11 @@ button:hover {
     gap: 20px;
 
     font: 600 1.2em system-ui, sans-serif;
-    color: #fff;
+    color: var(--dashboard-white);
 }
 
 .sidebar svg > path {
-    fill: #fff;
+    fill: var(--dashboard-white);
 }
 
 .sidebar > ul > li:first-of-type {
@@ -127,7 +137,7 @@ button:hover {
     grid-column: 2 / 4;
 
     display: grid;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--dashboard-white);
     row-gap: 40px;
     padding-bottom: 20px;
 
@@ -211,22 +221,38 @@ button:hover {
         "projects announcements"
         "projects trending";
     gap: 20px;
-    padding: 30px 20px;
+    /* padding: 24px 12px; */
 
-    background-color: hsl(214, 32%, 91%);
+    background-color: var(--dashboard-gray);
 }
 
 .projects {
     grid-area: projects;
     
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: max-content;
     column-gap: 20px;
 }
 
 .projects > :first-child {
     grid-column: 1 / -1;
+    font: 600 1.2em system-ui, sans-serif;
+}
+
+.projects > .project-container {
+    background-color: var(--dashboard-white);
+    margin-bottom: 20px;
+    border-left: 6px solid var(--dashboard-yellow);
+    border-radius: 6px;
+
+    > p:first-child {
+        font-weight: 600;
+    }
+
+    > p + p {
+        color: var(--project-description);
+    }
 }
 
 .announcements {
