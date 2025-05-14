@@ -128,8 +128,8 @@ button:hover {
 
     display: grid;
     background-color: hsl(0, 0%, 100%);
-    row-gap: 32px;
-    padding-bottom: 16px;
+    row-gap: 40px;
+    padding-bottom: 20px;
 
     .profile-photo {
         background: url(./images/profiles/fox.svg) center / contain no-repeat;
@@ -165,8 +165,8 @@ button:hover {
     flex: 1 1 auto;
     
     justify-content: right;
-    gap: 30px;
     padding-right: 20px;
+    gap: 30px;
 
     > .profile-photo {
         width: 40px;
@@ -211,6 +211,7 @@ button:hover {
         "projects announcements"
         "projects trending";
     gap: 20px;
+    padding: 30px 20px;
 
     background-color: hsl(214, 32%, 91%);
 }
