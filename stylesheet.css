@@ -164,8 +164,9 @@ button:hover {
 .header > .top-menu > li:nth-child(2) {
     flex: 1 1 auto;
     
-    justify-content: center;
+    justify-content: right;
     gap: 30px;
+    padding-right: 20px;
 
     > .profile-photo {
         width: 40px;
@@ -181,10 +182,9 @@ button:hover {
     column-gap: 10px;
 
     > .profile-photo {
+        grid-area: photo;
         width: 72px;
         height: 72px;
-
-        grid-area: photo;
     }
 
     > p:nth-child(1) {
@@ -199,7 +199,7 @@ button:hover {
 }
 
 .header > .bottom-menu > li:nth-child(2) {
-    gap: 24px;
+    gap: 30px;
 }
 
 /* Main content */
