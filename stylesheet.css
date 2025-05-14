@@ -71,7 +71,7 @@ button:hover {
 
 .container {
     display: grid;
-    grid-template-columns: minmax(256px, 1fr) 4fr;
+    grid-template-columns: minmax(256px, 1fr) 5fr;
     grid-template-rows: min-content;
     min-height: 100dvh;
     
