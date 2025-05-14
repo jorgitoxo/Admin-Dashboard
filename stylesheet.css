@@ -190,6 +190,7 @@ button:hover {
     "photo hi"
     "photo user";
     column-gap: 10px;
+    min-width: fit-content;
 
     > .profile-photo {
         grid-area: photo;
@@ -221,7 +222,7 @@ button:hover {
         "projects announcements"
         "projects trending";
     gap: 20px;
-    /* padding: 24px 12px; */
+    padding: 20px 16px;
 
     background-color: var(--dashboard-gray);
 }
@@ -252,6 +253,29 @@ button:hover {
 
     > p + p {
         color: var(--project-description);
+    }
+}
+
+.project-icons {
+    display: flex;
+    justify-content: right;
+    gap: 16px;
+
+    > * {
+        width: 24px;
+        height: 24px;
+    }
+
+    > .favorite {
+        background-image: url(./images/projects/star-plus-outline.svg);
+    }
+
+    > .watch {
+        background-image: url(./images/projects/eye-plus-outline.svg);
+    }
+
+    > .share {
+        background-image: url(./images/projects/share-variant-outline.svg);
     }
 }
 
