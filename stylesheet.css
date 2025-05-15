@@ -86,7 +86,7 @@ button:hover {
     min-height: 100dvh;
     
     > :not(.main-content) {
-        padding-top: 32px;
+        padding-top: 12px;
     }
 }
 
@@ -138,8 +138,8 @@ button:hover {
 
     display: grid;
     background-color: var(--dashboard-white);
-    row-gap: 40px;
-    padding-bottom: 20px;
+    row-gap: 30px;
+    padding-bottom: 12px;
 
     .profile-photo {
         background: url(./images/profiles/fox.svg) center / contain no-repeat;
@@ -222,7 +222,7 @@ button:hover {
         "projects announcements"
         "projects trending";
     gap: 20px;
-    padding: 20px 16px;
+    padding: 16px;
 
     background-color: var(--dashboard-gray);
 }
@@ -234,11 +234,13 @@ button:hover {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: max-content;
     column-gap: 20px;
+    height: fit-content;
 }
 
 .projects > :first-child {
     grid-column: 1 / -1;
     font: 600 1.2em system-ui, sans-serif;
+    margin-bottom: 6px;
 }
 
 .projects > .project-container {
@@ -247,13 +249,19 @@ button:hover {
     border-left: 6px solid var(--dashboard-yellow);
     border-radius: 6px;
 
-    > p:first-child {
-        font-weight: 600;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px 20px 20px;
+}
 
-    > p + p {
-        color: var(--project-description);
-    }
+.project-info > :first-child {
+    font-weight: 600;
+}
+
+.project-info > p + p {
+    color: var(--project-description);
 }
 
 .project-icons {
