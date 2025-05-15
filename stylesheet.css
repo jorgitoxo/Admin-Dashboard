@@ -83,9 +83,10 @@ button:hover {
     display: grid;
     grid-template-columns: minmax(256px, 1fr) 5fr;
     grid-template-rows: min-content;
-    min-height: 100dvh;
     row-gap: 6px;
     background-color: var(--dashboard-gray);
+    min-height: 100dvh;
+    min-width: 1300px;
     
     > :not(.main-content) {
         padding-top: 12px;
@@ -301,10 +302,6 @@ button:hover {
         font: 600 1.2em system-ui, sans-serif;
         margin-bottom: 6px;
     }
-
-    /* > :not(:first-child, :last-child) {
-        border-bottom: 1px solid #949494;
-    } */
 
     > :nth-child(2) {
         border-top-left-radius: 10px;
