@@ -289,6 +289,39 @@ button:hover {
 
 .announcements {
     grid-area: announcements;
+
+    display: grid;
+    grid-template-rows: min-content;
+    height: fit-content;
+
+    > :first-child {
+        font: 600 1.2em system-ui, sans-serif;
+        margin-bottom: 6px;
+    }
+
+    > :not(:first-child, :last-child) {
+        border-bottom: 1px solid #949494;
+    }
+}
+
+.announcement {
+    background-color: var(--dashboard-white);
+    padding: 30px 30px;
+}
+
+.announcement > :first-child {
+    font-weight: 600;
+}
+
+.announcement > p + p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: var(--project-description);
 }
 
 .trending {
