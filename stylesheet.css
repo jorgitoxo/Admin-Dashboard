@@ -33,6 +33,8 @@ button {
     
     --active-button-shadow: #949494;
 
+    --container-shadow: hsl(215, 13%, 82%);
+
     --dashboard-blue: hsl(201, 79%, 46%);
     --dashboard-white: hsl(0, 0%, 100%);
     --dashboard-gray: hsl(214, 32%, 91%);
@@ -83,13 +85,12 @@ button:hover {
     display: grid;
     grid-template-columns: minmax(256px, 1fr) 5fr;
     grid-template-rows: min-content;
-    row-gap: 6px;
     background-color: var(--dashboard-gray);
     min-height: 100dvh;
     min-width: 1300px;
     
     > :not(.main-content) {
-        padding-top: 12px;
+        padding-top: 20px;
     }
 }
 
@@ -226,16 +227,14 @@ button:hover {
         "projects projects projects projects trending";
     grid-auto-rows: min-content;
     gap: 20px;
-    padding: 30px 40px;
-
-    background-color: var(--dashboard-gray);
+    padding: 20px 40px;
 }
 
 .projects {
     grid-area: projects;
     
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: max-content;
     column-gap: 20px;
     height: fit-content;
@@ -243,8 +242,6 @@ button:hover {
 
 .projects > :first-child {
     grid-column: 1 / -1;
-    font: 600 1.2em system-ui, sans-serif;
-    margin-bottom: 6px;
 }
 
 .projects > .project-container {
@@ -257,22 +254,24 @@ button:hover {
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
-    padding: 30px 20px 20px;
+    padding: 40px 30px;
 }
 
-.project-info > :first-child {
-    font-weight: 600;
-    margin-bottom: 2px;
-}
-
-.project-info > p + p {
-    color: var(--project-description);
+.project-info {
+    > :first-child {
+        font: 600 1.2em system-ui;
+        margin-bottom: 2px;
+    }
+    
+    > p + p {
+        color: var(--project-description);
+    }
 }
 
 .project-icons {
     display: flex;
     justify-content: right;
-    gap: 16px;
+    gap: 30px;
 
     > * {
         width: 24px;
@@ -298,11 +297,6 @@ button:hover {
     display: grid;
     grid-template-rows: min-content;
 
-    > :first-child {
-        font: 600 1.2em system-ui, sans-serif;
-        margin-bottom: 6px;
-    }
-
     > :nth-child(2) {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -319,15 +313,6 @@ button:hover {
     padding: 30px 50px;
 
     position: relative;
-}
-
-.announcement:not(div:last-of-type)::after {
-    content: "";
-    width: 85%;
-    position: absolute;
-    border-bottom: 2px solid var(--dashboard-gray);
-    left: 8%;
-    bottom: 0px;
 }
 
 .announcement > :first-child {
@@ -349,14 +334,31 @@ button:hover {
     color: var(--project-description);
 }
 
+.announcement:not(div:last-of-type)::after {
+    content: "";
+    width: 85%;
+    position: absolute;
+    border-bottom: 2px solid var(--dashboard-gray);
+    left: 8%;
+    bottom: 0px;
+}
+
 .trending {
     grid-area: trending;
 }
 
+.projects > :first-child,
+.announcements > :first-child,
+.trending > :first-child {
+    font: 600 1.6em system-ui, sans-serif;
+    margin-bottom: 6px;
+}
+
+
 .header,
 .project-container,
 .announcement:last-child {
-    box-shadow: 0 6px 2px -2px var(--searchbar-active);
+    box-shadow: 0 6px 2px -2px var(--container-shadow);
 }
 /* -------------------------------------------- */
 
