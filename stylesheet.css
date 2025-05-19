@@ -92,11 +92,12 @@ svg {
 svg:hover {
     transform: scale(1.2);
     transition: transform 0.26s ease-out;
+    cursor: pointer;
 }
 
 .container {
     display: grid;
-    grid-template-columns: minmax(256px, 1fr) 5fr;
+    grid-template-columns: minmax(280px, 1fr) 5fr;
     grid-template-rows: min-content;
     background-color: var(--dashboard-gray);
     min-height: 100dvh;
@@ -238,6 +239,13 @@ svg:hover {
     gap: 30px;
 }
 
+.header,
+.project-container,
+.announcement:last-child,
+.trends {
+    box-shadow: 0 6px 2px -2px var(--container-shadow);
+}
+
 /* Main content */
 .main-content {
     grid-column: 2 / 4;
@@ -249,6 +257,13 @@ svg:hover {
     grid-auto-rows: min-content;
     gap: 20px;
     padding: 40px 30px;
+}
+
+.projects > :first-child,
+.announcements > :first-child,
+.trending > :first-child {
+    font: 600 1.4em system-ui, sans-serif;
+    margin-bottom: 6px;
 }
 
 .projects {
@@ -310,6 +325,12 @@ svg:hover {
     > .share {
         background-image: url(./images/projects/share-variant-outline.svg);
     }
+}
+
+.project-icons > li:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    transition: transform 0.26s ease-out;
 }
 
 .announcements {
@@ -440,27 +461,6 @@ svg:hover {
 .trend:nth-child(4) .profile-photo {
     background: #A3BAFB url(./images/profiles/sloth.svg) center / contain no-repeat;
     outline: 6px solid #A3BAFB;
-}
-
-.projects > :first-child,
-.announcements > :first-child,
-.trending > :first-child {
-    font: 600 1.4em system-ui, sans-serif;
-    margin-bottom: 6px;
-}
-
-.header,
-.project-container,
-.announcement:last-child,
-.trends {
-    box-shadow: 0 6px 2px -2px var(--container-shadow);
-}
-
-.favorite:hover,
-.watch:hover,
-.share:hover {
-    transform: scale(1.3);
-    transition: transform 0.26s ease-out;
 }
 /* -------------------------------------------- */
 
